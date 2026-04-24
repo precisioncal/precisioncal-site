@@ -16,6 +16,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Arial;background:var(--light);overflow-x:hidden}
 
+/* Background animation */
 body::before{
   content:"";
   position:fixed;
@@ -30,18 +31,30 @@ body::before{
   to{transform:translate(200px,200px)}
 }
 
+/* Header */
 header{
   background:white;
   display:flex;
-  justify-content:space-between;
+  justify-content:center;
   align-items:center;
   padding:15px 20px;
-  position:sticky;top:0;
+  position:sticky;
+  top:0;
   z-index:10;
 }
-header img{height:45px}
-nav a{margin-left:15px;font-weight:bold;color:#0b4f8a;text-decoration:none}
 
+nav{
+  display:flex;
+  gap:18px;
+}
+
+nav a{
+  font-weight:bold;
+  color:#0b4f8a;
+  text-decoration:none;
+}
+
+/* Hero */
 .hero{
   background:linear-gradient(135deg,#07345c,#0b4f8a);
   color:white;
@@ -76,8 +89,13 @@ nav a{margin-left:15px;font-weight:bold;color:#0b4f8a;text-decoration:none}
   text-decoration:none;
 }
 
-.section{padding:50px 20px;text-align:center}
+/* Sections */
+.section{
+  padding:50px 20px;
+  text-align:center;
+}
 
+/* About */
 .about-box{
   max-width:900px;
   margin:0 auto;
@@ -86,12 +104,12 @@ nav a{margin-left:15px;font-weight:bold;color:#0b4f8a;text-decoration:none}
   border-radius:15px;
   text-align:left;
 }
-
 .about-box p{
   margin-bottom:15px;
   line-height:1.6;
 }
 
+/* Cards */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -105,14 +123,23 @@ nav a{margin-left:15px;font-weight:bold;color:#0b4f8a;text-decoration:none}
 }
 .card:hover{transform:translateY(-5px)}
 
-.faq-item{margin:10px 0;background:white;border-radius:10px}
+/* FAQ */
+.faq-item{
+  margin:10px 0;
+  background:white;
+  border-radius:10px;
+}
 .question{
   padding:15px;
   cursor:pointer;
   font-weight:bold;
 }
-.answer{display:none;padding:10px}
+.answer{
+  display:none;
+  padding:10px;
+}
 
+/* Footer */
 footer{
   background:#061f38;
   color:white;
@@ -120,20 +147,35 @@ footer{
   padding:20px;
 }
 
+/* Mobile Fix */
 @media(max-width:800px){
   header{
-    flex-direction:column;
-    gap:10px;
+    padding:12px;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
   }
 
   nav a{
-    margin:0 8px;
-    font-size:14px;
+    font-size:15px;
   }
 
-  .hero{flex-direction:column;text-align:center}
-  .hero h1{font-size:36px}
-  .hero img{margin:20px 0 0 0}
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding-top:45px;
+  }
+
+  .hero h1{
+    font-size:36px;
+  }
+
+  .hero img{
+    margin:20px 0 0 0;
+  }
 }
 </style>
 </head>
@@ -141,7 +183,6 @@ footer{
 <body>
 
 <header>
-  <img src="logo.jpg">
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
