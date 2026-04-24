@@ -6,98 +6,58 @@
 <title>PrecisionCal LLC</title>
 
 <style>
-body {
-  margin:0;
-  font-family:Arial, sans-serif;
-  color:#1f2937;
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:#1f2937;background:#f5f8fb}
+a{text-decoration:none}
+header{position:sticky;top:0;z-index:10;background:white;border-bottom:1px solid #ddd}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+.logo-wrap{display:flex;align-items:center;gap:10px;font-weight:bold;color:#07345c}
+.logo-wrap img{height:48px}
+.menu{display:flex;gap:18px}
+.menu a{color:#0b4f8a;font-weight:bold}
+.mobile-btn{display:none;font-size:28px;color:#0b4f8a}
+
+.hero{background:linear-gradient(135deg,#07345c,#0b4f8a);color:white;padding:55px 20px;text-align:center}
+.hero img{width:min(320px,90%);border-radius:18px;margin:25px auto 0;box-shadow:0 15px 35px rgba(0,0,0,.3)}
+.hero h1{font-size:clamp(36px,8vw,62px);margin:10px 0}
+.hero p{font-size:18px;max-width:650px;margin:10px auto}
+.btn{display:inline-block;margin:10px 6px;padding:13px 22px;border-radius:999px;background:#d6a536;color:#111;font-weight:bold}
+.btn.white{background:white;color:#07345c}
+
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;max-width:1100px;margin:-35px auto 40px;padding:0 18px}
+.quick div{background:white;padding:22px;border-radius:16px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,.12);font-weight:bold;color:#07345c}
+
+section{padding:55px 20px;max-width:1100px;margin:auto}
+h2{text-align:center;color:#07345c;font-size:34px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:white;padding:25px;border-radius:18px;box-shadow:0 8px 20px rgba(0,0,0,.08);transition:.2s}
+.card:hover{transform:translateY(-5px)}
+.card h3{color:#0b4f8a}
+
+.accordion{max-width:850px;margin:auto}
+.item{background:white;margin:12px 0;border-radius:14px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.08)}
+.question{padding:18px;font-weight:bold;cursor:pointer;color:#07345c}
+.answer{display:none;padding:0 18px 18px;color:#555}
+
+.cta{background:#07345c;color:white;text-align:center;padding:55px 20px}
+.cta h2{color:white}
+
+footer{background:#061f38;color:white;text-align:center;padding:25px}
+
+.floating-call{position:fixed;bottom:18px;right:18px;background:#d6a536;color:#111;padding:14px 18px;border-radius:999px;font-weight:bold;box-shadow:0 8px 25px rgba(0,0,0,.3);z-index:99}
+
+@media(max-width:800px){
+  .menu{display:none;flex-direction:column;background:white;position:absolute;top:72px;left:0;width:100%;padding:20px;text-align:center}
+  .menu.show{display:flex}
+  .mobile-btn{display:block;cursor:pointer}
+  .quick{grid-template-columns:1fr 1fr;margin-top:-20px}
+  .cards{grid-template-columns:1fr}
+  .hero{padding-top:40px}
 }
 
-header {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:15px 30px;
-  background:white;
-  border-bottom:1px solid #ddd;
-}
-
-header img {
-  height:50px;
-}
-
-nav a {
-  margin-left:20px;
-  text-decoration:none;
-  color:#0b4f8a;
-  font-weight:bold;
-}
-
-.hero {
-  background:#0b4f8a;
-  color:white;
-  padding:60px 20px;
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:center;
-}
-
-.hero-text {
-  max-width:500px;
-}
-
-.hero h1 {
-  font-size:42px;
-}
-
-.hero img {
-  width:300px;
-  border-radius:15px;
-  margin-left:30px;
-}
-
-.btn {
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 20px;
-  background:gold;
-  color:black;
-  border-radius:25px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.section {
-  padding:50px 20px;
-  text-align:center;
-}
-
-.cards {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
-}
-
-.card {
-  width:250px;
-  padding:20px;
-  border:1px solid #ddd;
-  border-radius:10px;
-}
-
-.cta {
-  background:#0b4f8a;
-  color:white;
-  padding:50px;
-  text-align:center;
-}
-
-footer {
-  background:#061f38;
-  color:white;
-  padding:20px;
-  text-align:center;
+@media(max-width:480px){
+  .quick{grid-template-columns:1fr}
+  .btn{display:block;margin:10px auto;max-width:260px}
 }
 </style>
 </head>
@@ -105,51 +65,111 @@ footer {
 <body>
 
 <header>
-  <img src="logo.jpg">
-  <nav>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-  </nav>
+  <div class="nav">
+    <div class="logo-wrap">
+      <img src="logo.jpg" alt="PrecisionCal logo">
+      <span>PrecisionCal LLC</span>
+    </div>
+
+    <div class="mobile-btn" onclick="toggleMenu()">☰</div>
+
+    <div class="menu" id="menu">
+      <a href="#services">Services</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#faq">FAQ</a>
+      <a href="mailto:thomas@precisioncal.net">Contact</a>
+    </div>
+  </div>
 </header>
 
 <div class="hero">
-  <div class="hero-text">
-    <h1>PrecisionCal LLC</h1>
-    <p>Calibration • Repair • Maintenance</p>
-    <p>Fast, traceable service for gas detection equipment</p>
-    <a class="btn" href="tel:13185277504">Call Now</a>
-  </div>
+  <h1>PrecisionCal LLC</h1>
+  <p>Calibration • Repair • Maintenance</p>
+  <p>Fast, traceable service for gas detection and air monitoring equipment.</p>
 
-  <img src="Websiteme.png">
+  <a class="btn" href="tel:13185277504">Call Now</a>
+  <a class="btn white" href="mailto:thomas@precisioncal.net">Request Service</a>
+
+  <img src="Websiteme.png" alt="PrecisionCal technician">
 </div>
 
-<div class="section">
+<div class="quick">
+  <div>24hr Call-Out</div>
+  <div>NIST Traceable</div>
+  <div>Quick Turnaround</div>
+  <div>Fully Insured</div>
+</div>
+
+<section id="services">
   <h2>Our Services</h2>
   <div class="cards">
     <div class="card">
       <h3>Calibration</h3>
-      <p>NIST traceable calibration services</p>
+      <p>Routine calibration for portable gas monitors with service documentation.</p>
     </div>
     <div class="card">
       <h3>Repair</h3>
-      <p>Sensor replacements and diagnostics</p>
+      <p>Sensor replacements, batteries, diagnostics, and post-repair calibration.</p>
     </div>
     <div class="card">
       <h3>Maintenance</h3>
-      <p>Routine service to keep monitors ready</p>
+      <p>Preventive service to keep monitors ready and reduce downtime.</p>
     </div>
   </div>
-</div>
+</section>
+
+<section id="equipment">
+  <h2>Equipment Supported</h2>
+  <div class="cards">
+    <div class="card"><h3>MSA Altair 5X</h3><p>Calibration and sensor support.</p></div>
+    <div class="card"><h3>Galaxy GX2</h3><p>Bump station and calibration support.</p></div>
+    <div class="card"><h3>Gas Detection Equipment</h3><p>Portable air monitoring equipment service.</p></div>
+  </div>
+</section>
+
+<section id="faq">
+  <h2>Common Questions</h2>
+  <div class="accordion">
+    <div class="item">
+      <div class="question" onclick="toggleAnswer(this)">Do you provide certificates?</div>
+      <div class="answer">Yes. Calibration certificates and service reports can be provided for your records.</div>
+    </div>
+    <div class="item">
+      <div class="question" onclick="toggleAnswer(this)">Do you repair failed sensors?</div>
+      <div class="answer">Yes. Failed sensors can be replaced and the unit can be recalibrated after repair.</div>
+    </div>
+    <div class="item">
+      <div class="question" onclick="toggleAnswer(this)">Do you offer emergency service?</div>
+      <div class="answer">Yes. 24hr call-out service is available.</div>
+    </div>
+  </div>
+</section>
 
 <div class="cta">
-  <h2>Need Service?</h2>
-  <p>Call or email to schedule calibration or repair</p>
-  <a class="btn" href="mailto:thomas@precisioncal.net">Email Us</a>
+  <h2>Need Calibration or Repair?</h2>
+  <p>Call or email PrecisionCal to schedule service.</p>
+  <a class="btn" href="tel:13185277504">318-527-7504</a>
+  <a class="btn white" href="mailto:thomas@precisioncal.net">thomas@precisioncal.net</a>
 </div>
 
 <footer>
-  PrecisionCal LLC | 318-527-7504 | thomas@precisioncal.net
+  PrecisionCal LLC<br>
+  Calibration • Repair • Maintenance<br>
+  318-527-7504 | thomas@precisioncal.net
 </footer>
+
+<a class="floating-call" href="tel:13185277504">Call Now</a>
+
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("show");
+}
+
+function toggleAnswer(element){
+  const answer = element.nextElementSibling;
+  answer.style.display = answer.style.display === "block" ? "none" : "block";
+}
+</script>
 
 </body>
 </html>
