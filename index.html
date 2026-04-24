@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PrecisionCal LLC | Gas Monitor Calibration & Repair</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrecisionCal LLC</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      font-family: Arial, sans-serif;
       background: #f4f8fc;
-      color: #1b1f24;
-      line-height: 1.6;
+      color: #333;
     }
 
     header {
-      background: linear-gradient(135deg, #003b73, #0074d9);
+      background: #003b73;
       color: white;
-      padding: 40px 20px;
+      padding: 20px;
       text-align: center;
     }
 
-    .logo {
-      max-width: 180px;
-      margin-bottom: 20px;
+    header img {
+      max-width: 150px;
+      display: block;
+      margin: 0 auto 10px;
     }
 
-    header h1 {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
+    nav {
+      margin-top: 10px;
     }
 
-    header p {
-      font-size: 1.15rem;
-      max-width: 750px;
-      margin: auto;
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     .hero {
@@ -48,137 +47,60 @@
       background: white;
     }
 
-    .hero h2 {
+    .hero h1 {
       color: #003b73;
-      font-size: 2rem;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .hero p {
-      max-width: 850px;
-      margin: 0 auto 25px;
-      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 20px;
     }
 
-    .btn {
-      display: inline-block;
-      background: #0074d9;
-      color: white;
-      text-decoration: none;
-      padding: 14px 26px;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #005fae;
-      transform: translateY(-2px);
-    }
-
-    section {
-      padding: 50px 20px;
-      max-width: 1100px;
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
       margin: auto;
     }
 
-    section h2 {
-      color: #003b73;
-      font-size: 1.9rem;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .about {
-      background: white;
-      border-radius: 14px;
-      padding: 35px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .about p {
-      font-size: 1.08rem;
-      margin-bottom: 15px;
-    }
-
     .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
-      margin-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
 
     .card {
       background: white;
-      padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       text-align: center;
-      transition: 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
     }
 
     .card h3 {
       color: #0074d9;
-      margin-bottom: 12px;
     }
 
     .highlight {
       background: #003b73;
       color: white;
       text-align: center;
-      padding: 45px 20px;
-      margin-top: 30px;
-    }
-
-    .highlight h2 {
-      color: white;
+      padding: 40px 20px;
     }
 
     .contact {
-      background: white;
-      border-radius: 14px;
-      padding: 35px;
       text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .contact p {
-      font-size: 1.1rem;
-      margin: 10px 0;
-    }
-
-    .contact a {
-      color: #0074d9;
-      font-weight: bold;
-      text-decoration: none;
+      padding: 40px 20px;
     }
 
     footer {
       background: #1b1f24;
       color: white;
       text-align: center;
-      padding: 22px 15px;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .hero h2,
-      section h2 {
-        font-size: 1.6rem;
-      }
-
-      .about,
-      .contact {
-        padding: 25px;
-      }
+      padding: 15px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -186,92 +108,62 @@
 <body>
 
   <header>
-    <img src="logo.png" alt="PrecisionCal LLC Logo" class="logo" />
+    <img src="logo.png" alt="PrecisionCal Logo">
     <h1>PrecisionCal LLC</h1>
-    <p>Professional gas monitor calibration, repair, and maintenance services.</p>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <div class="hero">
-    <h2>Reliable Calibration. Fast Turnaround. Trusted Service.</h2>
+    <h1>Gas Monitor Calibration & Repair</h1>
     <p>
-      PrecisionCal LLC provides calibration, repair, and maintenance for gas detection
-      equipment used in environmental, industrial, and safety applications.
+      Professional calibration, repair, and maintenance for gas monitoring equipment.
+      Fast turnaround, reliable service, and NIST-traceable calibrations.
     </p>
-    <a href="#contact" class="btn">Contact PrecisionCal</a>
   </div>
 
-  <section>
-    <h2>About PrecisionCal</h2>
-    <div class="about">
-      <p>
-        With a background in environmental and safety work, PrecisionCal LLC provides
-        professional calibration, repair, and maintenance for gas monitoring equipment,
-        including MSA, BW, and other major brands.
-      </p>
-      <p>
-        We offer fast turnaround, 24-hour callout service, and NIST-traceable calibrations.
-        Fully insured and focused on accuracy, our mission is to keep your equipment
-        reliable and your team safe.
-      </p>
-      <p>
-        Built from real field experience, we understand what reliability means on the job.
-      </p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Our Services</h2>
+  <div class="section" id="services">
+    <h2 style="text-align:center; color:#003b73;">Services</h2>
     <div class="services">
       <div class="card">
-        <h3>Gas Monitor Calibration</h3>
-        <p>
-          Professional calibration services for portable and fixed gas detection equipment.
-        </p>
+        <h3>Calibration</h3>
+        <p>NIST-traceable calibration services for all major gas monitors.</p>
       </div>
 
       <div class="card">
-        <h3>Equipment Repair</h3>
-        <p>
-          Sensor replacement, battery replacement, diagnostics, and repair services.
-        </p>
+        <h3>Repair</h3>
+        <p>Sensor replacements, diagnostics, and full equipment repair.</p>
       </div>
 
       <div class="card">
-        <h3>Maintenance Programs</h3>
-        <p>
-          Ongoing service options to help keep your equipment ready and compliant.
-        </p>
+        <h3>Maintenance</h3>
+        <p>Routine service programs to keep your equipment compliant.</p>
       </div>
 
       <div class="card">
-        <h3>24-Hour Callout</h3>
-        <p>
-          Emergency and after-hours service availability when your operation needs support.
-        </p>
+        <h3>24hr Callout</h3>
+        <p>Emergency service available when you need it most.</p>
       </div>
     </div>
-  </section>
+  </div>
 
   <div class="highlight">
-    <h2>NIST-Traceable Calibrations</h2>
+    <h2>NIST-Traceable & Fully Insured</h2>
     <p>
-      PrecisionCal LLC is fully insured and committed to accurate, dependable service
-      for safety-critical equipment.
+      PrecisionCal LLC delivers dependable service to keep your team safe and your equipment reliable.
     </p>
   </div>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact">
-      <p><strong>PrecisionCal LLC</strong></p>
-      <p>Phone: <a href="tel:3185277504">318-527-7504</a></p>
-      <p>Email: <a href="mailto:thomas@precisioncal.net">thomas@precisioncal.net</a></p>
-      <p>Website: <a href="https://precisioncal.net">precisioncal.net</a></p>
-    </div>
-  </section>
+  <div class="contact" id="contact">
+    <h2>Contact</h2>
+    <p><strong>Phone:</strong> 318-527-7504</p>
+    <p><strong>Email:</strong> thomas@precisioncal.net</p>
+  </div>
 
   <footer>
-    <p>&copy; 2026 PrecisionCal LLC. All rights reserved.</p>
+    <p>&copy; 2026 PrecisionCal LLC</p>
   </footer>
 
 </body>
