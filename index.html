@@ -16,7 +16,6 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Arial;background:var(--light);overflow-x:hidden}
 
-/* Background animation */
 body::before{
   content:"";
   position:fixed;
@@ -31,7 +30,6 @@ body::before{
   to{transform:translate(200px,200px)}
 }
 
-/* Header */
 header{
   background:white;
   display:flex;
@@ -54,7 +52,6 @@ nav a{
   text-decoration:none;
 }
 
-/* Hero */
 .hero{
   background:linear-gradient(135deg,#07345c,#0b4f8a);
   color:white;
@@ -89,13 +86,11 @@ nav a{
   text-decoration:none;
 }
 
-/* Sections */
 .section{
   padding:50px 20px;
   text-align:center;
 }
 
-/* About */
 .about-box{
   max-width:900px;
   margin:0 auto;
@@ -109,7 +104,6 @@ nav a{
   line-height:1.6;
 }
 
-/* Cards */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -123,7 +117,6 @@ nav a{
 }
 .card:hover{transform:translateY(-5px)}
 
-/* FAQ */
 .faq-item{
   margin:10px 0;
   background:white;
@@ -139,7 +132,52 @@ nav a{
   padding:10px;
 }
 
-/* Footer */
+.cta{
+  background:#0b4f8a;
+  color:white;
+  text-align:center;
+  padding:50px 20px;
+  margin-top:40px;
+}
+
+.cta h2{
+  margin-bottom:15px;
+}
+
+.cta p{
+  margin-bottom:25px;
+}
+
+.cta-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.cta-buttons a{
+  display:inline-block;
+  padding:12px 22px;
+  border-radius:30px;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.call-btn{
+  background:#d6a536;
+  color:black;
+}
+
+.email-btn{
+  background:white;
+  color:#0b4f8a;
+}
+
+.quote-btn{
+  background:#061f38;
+  color:white;
+}
+
 footer{
   background:#061f38;
   color:white;
@@ -147,7 +185,6 @@ footer{
   padding:20px;
 }
 
-/* Mobile Fix */
 @media(max-width:800px){
   header{
     padding:12px;
@@ -188,7 +225,7 @@ footer{
     <a href="#services">Services</a>
     <a href="#equipment">Equipment</a>
     <a href="#faq">FAQ</a>
-    <a href="mailto:thomas@precisioncal.net">Contact</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
@@ -264,7 +301,17 @@ footer{
     <div class="question" onclick="toggle(this)">Do you provide certificates?</div>
     <div class="answer">Yes, calibration certificates are included.</div>
   </div>
+</div>
 
+<div class="cta" id="contact">
+  <h2>Need Service or a Quote?</h2>
+  <p>Fast turnaround. Reliable work. Get in touch today.</p>
+
+  <div class="cta-buttons">
+    <a class="call-btn" href="tel:13185277504">Call Now</a>
+    <a class="email-btn" href="mailto:thomas@precisioncal.net">Email</a>
+    <a class="quote-btn" href="mailto:thomas@precisioncal.net?subject=Service Request Quote">Request Quote</a>
+  </div>
 </div>
 
 <footer>
