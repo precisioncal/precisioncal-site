@@ -1,594 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PrecisionCal LLC | Calibration • Repair • Maintenance</title>
-<meta name="description" content="PrecisionCal LLC provides professional calibration, repair, and maintenance for gas detection and air monitoring equipment.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrecisionCal LLC | Gas Monitor Calibration & Repair</title>
 
-<style>
-:root{
-  --blue:#0b4f8a;
-  --dark:#061f38;
-  --deep:#031426;
-  --gold:#d6a536;
-  --light:#f5f9ff;
-  --white:#fff;
-  --text:#1f2937;
-  --muted:#64748b;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  color:var(--text);
-  background:var(--light);
-  overflow-x:hidden;
-}
-a{text-decoration:none;color:inherit}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f8fc;
+      color: #1b1f24;
+      line-height: 1.6;
+    }
 
-/* MOVING BACKGROUND */
-.bg-motion{
-  position:fixed;
-  inset:0;
-  z-index:-2;
-  background:linear-gradient(135deg,#031426,#07345c,#0b4f8a);
-}
-.bg-motion::before,
-.bg-motion::after{
-  content:"";
-  position:absolute;
-  width:420px;
-  height:420px;
-  border-radius:50%;
-  background:rgba(214,165,54,.18);
-  filter:blur(40px);
-  animation:floatBlob 12s infinite alternate ease-in-out;
-}
-.bg-motion::before{top:8%;left:-120px}
-.bg-motion::after{right:-120px;bottom:5%;animation-delay:3s;background:rgba(255,255,255,.13)}
-@keyframes floatBlob{
-  from{transform:translate(0,0) scale(1)}
-  to{transform:translate(80px,60px) scale(1.18)}
-}
+    header {
+      background: linear-gradient(135deg, #003b73, #0074d9);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
 
-/* HEADER */
-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(255,255,255,.35);
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-.nav{
-  max-width:1180px;
-  margin:auto;
-  padding:13px 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.logo-wrap{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  color:var(--dark);
-  font-weight:900;
-}
-.logo-wrap img{
-  width:52px;
-  height:52px;
-  object-fit:contain;
-  border-radius:12px;
-}
-.logo-wrap span small{
-  display:block;
-  color:var(--muted);
-  font-size:11px;
-  letter-spacing:.8px;
-  text-transform:uppercase;
-}
-.menu{display:flex;gap:22px;align-items:center}
-.menu a{
-  color:var(--dark);
-  font-weight:800;
-  font-size:14px;
-  position:relative;
-}
-.menu a::after{
-  content:"";
-  position:absolute;
-  left:0;bottom:-6px;
-  width:0;height:3px;
-  background:var(--gold);
-  transition:.25s;
-}
-.menu a:hover::after{width:100%}
-.mobile-btn{display:none;font-size:30px;color:var(--dark);cursor:pointer}
+    .logo {
+      max-width: 180px;
+      margin-bottom: 20px;
+    }
 
-/* HERO */
-.hero{
-  min-height:92vh;
-  display:grid;
-  place-items:center;
-  color:white;
-  padding:80px 18px 40px;
-  position:relative;
-  overflow:hidden;
-}
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-  background-size:42px 42px;
-  animation:gridMove 20s linear infinite;
-}
-@keyframes gridMove{to{background-position:84px 84px}}
-.hero-inner{
-  max-width:1180px;
-  width:100%;
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:42px;
-  align-items:center;
-  position:relative;
-  z-index:2;
-}
-.badge{
-  display:inline-block;
-  background:rgba(255,255,255,.13);
-  border:1px solid rgba(255,255,255,.25);
-  padding:10px 15px;
-  border-radius:999px;
-  color:#ffe7a4;
-  font-weight:900;
-  font-size:13px;
-  letter-spacing:.8px;
-  margin-bottom:18px;
-  animation:pulseGlow 2.4s infinite;
-}
-@keyframes pulseGlow{
-  0%,100%{box-shadow:0 0 0 rgba(214,165,54,0)}
-  50%{box-shadow:0 0 28px rgba(214,165,54,.45)}
-}
-.hero h1{
-  font-size:clamp(42px,7vw,76px);
-  line-height:.98;
-  margin-bottom:18px;
-}
-.hero h1 span{color:var(--gold)}
-.hero p{
-  font-size:18px;
-  color:#e2efff;
-  max-width:640px;
-  line-height:1.65;
-}
-.hero-buttons{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
-.btn{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  gap:8px;
-  padding:14px 22px;
-  border-radius:999px;
-  background:var(--gold);
-  color:#111;
-  font-weight:900;
-  box-shadow:0 12px 30px rgba(214,165,54,.32);
-  transition:.25s;
-}
-.btn:hover{transform:translateY(-3px) scale(1.03)}
-.btn.white{background:white;color:var(--dark);box-shadow:0 12px 30px rgba(255,255,255,.18)}
+    header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
 
-.photo-card{
-  position:relative;
-  padding:14px;
-  border-radius:30px;
-  background:rgba(255,255,255,.14);
-  border:1px solid rgba(255,255,255,.22);
-  backdrop-filter:blur(14px);
-  box-shadow:0 30px 80px rgba(0,0,0,.35);
-  animation:floatCard 5s ease-in-out infinite;
-}
-@keyframes floatCard{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-14px)}
-}
-.photo-card img{
-  width:100%;
-  max-height:560px;
-  object-fit:cover;
-  border-radius:22px;
-}
-.orbit{
-  position:absolute;
-  width:105px;
-  height:105px;
-  border-radius:50%;
-  background:rgba(214,165,54,.95);
-  color:#111;
-  display:grid;
-  place-items:center;
-  text-align:center;
-  font-weight:900;
-  font-size:13px;
-  right:-18px;
-  top:24px;
-  box-shadow:0 18px 35px rgba(0,0,0,.3);
-  animation:spinBadge 8s linear infinite;
-}
-@keyframes spinBadge{
-  from{transform:rotate(0deg)}
-  to{transform:rotate(360deg)}
-}
+    header p {
+      font-size: 1.15rem;
+      max-width: 750px;
+      margin: auto;
+    }
 
-/* QUICK CARDS */
-.quick{
-  max-width:1180px;
-  margin:-55px auto 0;
-  padding:0 18px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-  position:relative;
-  z-index:5;
-}
-.quick div{
-  background:rgba(255,255,255,.95);
-  padding:24px 18px;
-  border-radius:20px;
-  text-align:center;
-  box-shadow:0 18px 40px rgba(0,0,0,.16);
-  color:var(--dark);
-  font-weight:900;
-  transition:.25s;
-}
-.quick div:hover{transform:translateY(-8px);background:#fff7df}
-.quick span{display:block;font-size:30px;margin-bottom:8px}
+    .hero {
+      padding: 50px 20px;
+      text-align: center;
+      background: white;
+    }
 
-/* SECTIONS */
-section{
-  max-width:1180px;
-  margin:auto;
-  padding:80px 18px;
-}
-.section-title{text-align:center;margin-bottom:34px}
-.section-title h2{
-  color:white;
-  font-size:clamp(32px,5vw,48px);
-}
-.section-title p{
-  color:#dcecff;
-  margin-top:10px;
-  font-size:17px;
-}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-.card{
-  background:rgba(255,255,255,.94);
-  border:1px solid rgba(255,255,255,.45);
-  border-radius:24px;
-  padding:28px;
-  box-shadow:0 20px 45px rgba(0,0,0,.16);
-  transition:.25s;
-  position:relative;
-  overflow:hidden;
-}
-.card::before{
-  content:"";
-  position:absolute;
-  width:90px;height:90px;
-  border-radius:50%;
-  background:rgba(214,165,54,.22);
-  right:-28px;top:-28px;
-}
-.card:hover{transform:translateY(-9px) rotateX(3deg)}
-.icon{font-size:38px;margin-bottom:12px}
-.card h3{color:var(--blue);font-size:23px;margin-bottom:10px}
-.card p{color:#475569;line-height:1.6}
+    .hero h2 {
+      color: #003b73;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
 
-/* PROCESS */
-.process{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-.step{
-  background:rgba(255,255,255,.95);
-  border-radius:22px;
-  padding:24px;
-  text-align:center;
-  position:relative;
-  box-shadow:0 18px 40px rgba(0,0,0,.15);
-}
-.step b{
-  display:inline-grid;
-  place-items:center;
-  width:42px;height:42px;
-  border-radius:50%;
-  background:var(--gold);
-  color:#111;
-  margin-bottom:12px;
-}
-.step h3{color:var(--dark);margin-bottom:8px}
-.step p{color:var(--muted)}
+    .hero p {
+      max-width: 850px;
+      margin: 0 auto 25px;
+      font-size: 1.1rem;
+    }
 
-/* FAQ */
-.accordion{max-width:850px;margin:auto}
-.item{
-  background:rgba(255,255,255,.95);
-  border-radius:18px;
-  margin:14px 0;
-  overflow:hidden;
-  box-shadow:0 14px 34px rgba(0,0,0,.14);
-}
-.question{
-  padding:20px;
-  font-weight:900;
-  color:var(--dark);
-  cursor:pointer;
-  display:flex;
-  justify-content:space-between;
-}
-.answer{
-  max-height:0;
-  overflow:hidden;
-  color:#475569;
-  padding:0 20px;
-  transition:max-height .35s ease,padding .35s ease;
-}
-.item.active .answer{max-height:160px;padding:0 20px 20px}
+    .btn {
+      display: inline-block;
+      background: #0074d9;
+      color: white;
+      text-decoration: none;
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
 
-/* CTA */
-.cta{
-  text-align:center;
-  color:white;
-  padding:90px 18px;
-}
-.cta-box{
-  max-width:900px;
-  margin:auto;
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.25);
-  border-radius:30px;
-  padding:45px 24px;
-  backdrop-filter:blur(14px);
-  box-shadow:0 30px 80px rgba(0,0,0,.25);
-}
-.cta h2{font-size:clamp(34px,6vw,56px);margin-bottom:12px}
-.cta p{color:#dcecff;font-size:18px;margin-bottom:24px}
+    .btn:hover {
+      background: #005fae;
+      transform: translateY(-2px);
+    }
 
-footer{
-  background:rgba(3,20,38,.96);
-  color:white;
-  text-align:center;
-  padding:28px 18px;
-}
-.floating-call{
-  position:fixed;
-  bottom:18px;
-  right:18px;
-  z-index:80;
-  background:var(--gold);
-  color:#111;
-  padding:15px 19px;
-  border-radius:999px;
-  font-weight:900;
-  box-shadow:0 16px 35px rgba(0,0,0,.35);
-  animation:bounceCall 2s infinite;
-}
-@keyframes bounceCall{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-7px)}
-}
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-.reveal{
-  opacity:0;
-  transform:translateY(35px);
-  transition:.8s ease;
-}
-.reveal.show{
-  opacity:1;
-  transform:translateY(0);
-}
+    section h2 {
+      color: #003b73;
+      font-size: 1.9rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
-@media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr;text-align:center}
-  .hero p{margin:auto}
-  .hero-buttons{justify-content:center}
-  .quick{grid-template-columns:1fr 1fr;margin-top:-30px}
-  .cards,.process{grid-template-columns:1fr}
-  .menu{
-    display:none;
-    position:absolute;
-    top:78px;
-    left:0;
-    width:100%;
-    background:white;
-    padding:20px;
-    flex-direction:column;
-    box-shadow:0 20px 35px rgba(0,0,0,.18);
-  }
-  .menu.show{display:flex}
-  .mobile-btn{display:block}
-  .orbit{right:10px;top:10px;width:86px;height:86px;font-size:11px}
-}
-@media(max-width:520px){
-  .quick{grid-template-columns:1fr}
-  .logo-wrap span{font-size:15px}
-  .hero{padding-top:55px}
-  .btn{width:100%;max-width:300px}
-  .floating-call{left:18px;right:18px;text-align:center}
-}
-</style>
+    .about {
+      background: white;
+      border-radius: 14px;
+      padding: 35px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .about p {
+      font-size: 1.08rem;
+      margin-bottom: 15px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #0074d9;
+      margin-bottom: 12px;
+    }
+
+    .highlight {
+      background: #003b73;
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+      margin-top: 30px;
+    }
+
+    .highlight h2 {
+      color: white;
+    }
+
+    .contact {
+      background: white;
+      border-radius: 14px;
+      padding: 35px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+
+    .contact a {
+      color: #0074d9;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #1b1f24;
+      color: white;
+      text-align: center;
+      padding: 22px 15px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .hero h2,
+      section h2 {
+        font-size: 1.6rem;
+      }
+
+      .about,
+      .contact {
+        padding: 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<div class="bg-motion"></div>
 
-<header>
-  <div class="nav">
-    <a class="logo-wrap" href="#top">
-      <img src="logo.jpg" alt="PrecisionCal LLC logo">
-      <span>PrecisionCal LLC<small>Calibration • Repair • Maintenance</small></span>
-    </a>
+  <header>
+    <img src="logo.png" alt="PrecisionCal LLC Logo" class="logo" />
+    <h1>PrecisionCal LLC</h1>
+    <p>Professional gas monitor calibration, repair, and maintenance services.</p>
+  </header>
 
-    <div class="mobile-btn" onclick="toggleMenu()">☰</div>
-
-    <nav class="menu" id="menu">
-      <a href="#services">Services</a>
-      <a href="#equipment">Equipment</a>
-      <a href="#process">Process</a>
-      <a href="#faq">FAQ</a>
-      <a href="mailto:thomas@precisioncal.net">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main id="top">
-  <section class="hero">
-    <div class="hero-inner">
-      <div>
-        <div class="badge">24HR CALL-OUT SERVICE AVAILABLE</div>
-        <h1>Precision calibration with <span>fast turnaround.</span></h1>
-        <p>Professional calibration, repair, and maintenance for gas detection and air monitoring equipment with traceable documentation and dependable field support.</p>
-        <div class="hero-buttons">
-          <a class="btn" href="tel:13185277504">Call 318-527-7504</a>
-          <a class="btn white" href="mailto:thomas@precisioncal.net?subject=Calibration Service Request">Request Service</a>
-        </div>
-      </div>
-
-      <div class="photo-card">
-        <img src="Websiteme.png" alt="PrecisionCal service technician">
-        <div class="orbit">NIST<br>TRACEABLE</div>
-      </div>
-    </div>
-  </section>
-
-  <div class="quick reveal">
-    <div><span>⚡</span>Quick Turnaround</div>
-    <div><span>📋</span>Service Reports</div>
-    <div><span>🛡️</span>Fully Insured</div>
-    <div><span>🔧</span>Repair Support</div>
+  <div class="hero">
+    <h2>Reliable Calibration. Fast Turnaround. Trusted Service.</h2>
+    <p>
+      PrecisionCal LLC provides calibration, repair, and maintenance for gas detection
+      equipment used in environmental, industrial, and safety applications.
+    </p>
+    <a href="#contact" class="btn">Contact PrecisionCal</a>
   </div>
 
-  <section id="services" class="reveal">
-    <div class="section-title">
-      <h2>Services Built Around Uptime</h2>
-      <p>Keep your monitors ready, documented, and in service.</p>
+  <section>
+    <h2>About PrecisionCal</h2>
+    <div class="about">
+      <p>
+        With a background in environmental and safety work, PrecisionCal LLC provides
+        professional calibration, repair, and maintenance for gas monitoring equipment,
+        including MSA, BW, and other major brands.
+      </p>
+      <p>
+        We offer fast turnaround, 24-hour callout service, and NIST-traceable calibrations.
+        Fully insured and focused on accuracy, our mission is to keep your equipment
+        reliable and your team safe.
+      </p>
+      <p>
+        Built from real field experience, we understand what reliability means on the job.
+      </p>
     </div>
-    <div class="cards">
+  </section>
+
+  <section>
+    <h2>Our Services</h2>
+    <div class="services">
       <div class="card">
-        <div class="icon">⚙️</div>
-        <h3>Calibration</h3>
-        <p>Routine gas monitor calibration with traceable documentation and clear pass/fail records.</p>
+        <h3>Gas Monitor Calibration</h3>
+        <p>
+          Professional calibration services for portable and fixed gas detection equipment.
+        </p>
       </div>
+
       <div class="card">
-        <div class="icon">🔧</div>
-        <h3>Repair</h3>
-        <p>Sensor replacement, batteries, full diagnostics, board-level repairs, and post-repair calibration to return units to service.</p>
+        <h3>Equipment Repair</h3>
+        <p>
+          Sensor replacement, battery replacement, diagnostics, and repair services.
+        </p>
       </div>
+
       <div class="card">
-        <div class="icon">📄</div>
-        <h3>Documentation</h3>
-        <p>Calibration certificates, service reports, and repair notes for your records and compliance needs.</p>
+        <h3>Maintenance Programs</h3>
+        <p>
+          Ongoing service options to help keep your equipment ready and compliant.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>24-Hour Callout</h3>
+        <p>
+          Emergency and after-hours service availability when your operation needs support.
+        </p>
       </div>
     </div>
   </section>
 
-  <section id="equipment" class="reveal">
-    <div class="section-title">
-      <h2>Equipment Supported</h2>
-      <p>Full-service support for ALL major gas detection and air monitoring equipment across multiple brands and industries.</p>
-    </div>
-    <div class="cards">
-      <div class="card"><div class="icon">🧪</div><h3>MSA, BW, and More</h3><p>Full calibration, diagnostics, and repair support across major gas monitor brands.</p></div>
-      <div class="card"><div class="icon">🏭</div><h3>All Calibration Systems</h3><p>Support for bump stations, docking systems, and calibration setups across brands.</p></div>
-      <div class="card"><div class="icon">💨</div><h3>Advanced Repairs</h3><p>From sensor replacement to full mainboard diagnostics and repair services.</p></div>
-    </div>
-  </section>
-
-  <section id="process" class="reveal">
-    <div class="section-title">
-      <h2>Simple Service Process</h2>
-      <p>Clear communication from quote to completion.</p>
-    </div>
-    <div class="process">
-      <div class="step"><b>1</b><h3>Contact</h3><p>Send equipment list and service needs.</p></div>
-      <div class="step"><b>2</b><h3>Inspect</h3><p>Units are checked for calibration or repair needs.</p></div>
-      <div class="step"><b>3</b><h3>Service</h3><p>Calibration, repair, and maintenance are completed.</p></div>
-      <div class="step"><b>4</b><h3>Report</h3><p>Certificates and service records are provided.</p></div>
-    </div>
-  </section>
-
-  <section id="faq" class="reveal">
-    <div class="section-title">
-      <h2>Common Questions</h2>
-      <p>Tap a question to open it.</p>
-    </div>
-    <div class="accordion">
-      <div class="item">
-        <div class="question" onclick="toggleAnswer(this)">Do you provide calibration certificates? <span>+</span></div>
-        <div class="answer">Yes. Calibration certificates and service reports can be provided for your records.</div>
-      </div>
-      <div class="item">
-        <div class="question" onclick="toggleAnswer(this)">Do you replace failed sensors? <span>+</span></div>
-        <div class="answer">Yes. Failed sensors can be replaced and the unit can be recalibrated after repair.</div>
-      </div>
-      <div class="item">
-        <div class="question" onclick="toggleAnswer(this)">Do you offer emergency service? <span>+</span></div>
-        <div class="answer">Yes. 24hr call-out service is available.</div>
-      </div>
-    </div>
-  </section>
-
-  <div class="cta reveal">
-    <div class="cta-box">
-      <h2>Need Calibration or Repair?</h2>
-      <p>Call or email PrecisionCal to schedule service or request a quote.</p>
-      <a class="btn" href="tel:13185277504">Call Now</a>
-      <a class="btn white" href="mailto:thomas@precisioncal.net">Email PrecisionCal</a>
-    </div>
+  <div class="highlight">
+    <h2>NIST-Traceable Calibrations</h2>
+    <p>
+      PrecisionCal LLC is fully insured and committed to accurate, dependable service
+      for safety-critical equipment.
+    </p>
   </div>
-</main>
 
-<footer>
-  <strong>PrecisionCal LLC</strong><br>
-  Calibration • Repair • Maintenance<br>
-  318-527-7504 | thomas@precisioncal.net
-</footer>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact">
+      <p><strong>PrecisionCal LLC</strong></p>
+      <p>Phone: <a href="tel:3185277504">318-527-7504</a></p>
+      <p>Email: <a href="mailto:thomas@precisioncal.net">thomas@precisioncal.net</a></p>
+      <p>Website: <a href="https://precisioncal.net">precisioncal.net</a></p>
+    </div>
+  </section>
 
-<a class="floating-call" href="tel:13185277504">Call Now</a>
+  <footer>
+    <p>&copy; 2026 PrecisionCal LLC. All rights reserved.</p>
+  </footer>
 
-<script>
-function toggleMenu(){
-  document.getElementById("menu").classList.toggle("show");
-}
-
-function toggleAnswer(element){
-  const item = element.parentElement;
-  item.classList.toggle("active");
-  element.querySelector("span").textContent = item.classList.contains("active") ? "−" : "+";
-}
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-},{threshold:.15});
-
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-</script>
 </body>
 </html>
