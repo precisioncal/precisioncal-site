@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PrecisionCal LLC | Calibration, Repair & Maintenance</title>
+  <meta name="description" content="PrecisionCal LLC provides air monitoring equipment calibration, repair, maintenance, quick turnaround, 24-hour call out service, and NIST-traceable calibration certificates." />
+
+  <style>
+    body { margin:0; font-family: Arial; }
+    header { padding:20px; background:#0b4f8a; color:white; }
+    .container { padding:40px; max-width:1000px; margin:auto; }
+    h1 { font-size:42px; }
+    .btn { background:#0b4f8a; color:white; padding:12px 20px; display:inline-block; margin-top:10px; text-decoration:none; }
+    .section { margin-top:40px; }
+    .card { border:1px solid #ddd; padding:20px; margin-top:10px; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h2>PrecisionCal LLC</h2>
+</header>
+
+<div class="container">
+  <h1>Calibration • Repair • Maintenance</h1>
+  <p>PrecisionCal LLC provides calibration, repair, maintenance, NIST-traceable documentation, and 24-hour call out service for air monitoring equipment.</p>
+
+  <a class="btn" href="tel:3185277504">Call Now</a>
+  <a class="btn" href="mailto:thomas@precisioncal.net">Email</a>
+
+  <div class="section">
+    <h2>Services</h2>
+    <div class="card">Calibration (NIST Traceable)</div>
+    <div class="card">Sensor Replacement & Repair</div>
+    <div class="card">24 Hour Call Out Service</div>
+  </div>
+
+  <div class="section">
+    <h2>Why Choose PrecisionCal</h2>
+    <div class="card">Fully Insured</div>
+    <div class="card">Quick Turnaround</div>
+    <div class="card">Reliable Service</div>
+  </div>
+
+  <div class="section">
+    <h2>Contact</h2>
+    <p><strong>Phone:</strong> 318-527-7504</p>
+    <p><strong>Email:</strong> thomas@precisioncal.net</p>
+  </div>
+</div>
+
+</body>
+</html>
